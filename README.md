@@ -34,7 +34,10 @@ English all (default settings, just hit enter)
 ### Once booted:
 * Connect your Arduino 101 with LCD to your Gateway device  
 * After you log in with your credentials enter following commands to download and run the script:  
+  `nuc-user@ubuntu-nuc:~# sudo apt-get install git` 
+  `nuc-user@ubuntu-nuc:~# sudo apt-get install curl` 
+  `nuc-user@ubuntu-nuc:~# sudo apt-get install npm` 
   `nuc-user@ubuntu-nuc:~# git clone https://github.com/plangdon/iot-class.git`  
   `nuc-user@ubuntu-nuc:~# cd iot-class`  
-  `nuc-user@ubuntu-nuc:~/iot-class#sudo ./ubuntu-gateway-setup.sh`  
+  `nuc-user@ubuntu-nuc:~/iot-class# sudo ./ubuntu-gateway-setup.sh`  
 * After script completes your system will reboot
