@@ -28,8 +28,8 @@ install_docker() {
 
 install_hdc() {
     echo -e "${Y}Install and setup configuration for Helix Device Cloud (HDC) agent...${NC}\n"
-    apt-get install -y $PWD/conf_files/hdc/hdc-2.3.0-x86_64.deb
-    cp conf_files/hdc/startup.bin /var/lib/iot
+    apt-get install -y ../conf_files/hdc/hdc-2.3.0-x86_64.deb
+    cp ../conf_files/hdc/startup.bin /var/lib/iot
     #configure using the iot-control utility installed by HDC agent
     iot-control -c /var/lib/iot/startup.bin
 }
