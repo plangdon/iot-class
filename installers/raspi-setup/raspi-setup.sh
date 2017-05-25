@@ -2,17 +2,16 @@
 
 #Create a log file in same directory to store output of the script
 timestamp=$(date +%s)
-exec > >(tee -ia ubuntu-gateway-install-log-$timestamp.log)
-exec 2> >(tee -ia ubuntu-gateway-install-log-$timestamp.log >&2)
+exec > >(tee -ia raspi-install-log-$timestamp.log)
+exec 2> >(tee -ia raspi-install-log-$timestamp.log >&2)
 
 #To change color to yellow for info text
 Y='\033[1;33m'
 NC='\033[0m'
 
+
 #Get the board details
-ATOM_PLATFORM="DE3815TYKH"
-CORE_PLATFORM="NUC5i7RYB"
-GATEWAY_DIR="gateway-setup"
+GATEWAY_DIR="raspi-setup"
 CUR_DIR="${PWD##*/}"
 platform=$(cat /sys/devices/virtual/dmi/id/board_name)
 
@@ -99,7 +98,7 @@ install_mraa_upm_plugins() {
 echo -e "${Y}********** Start of Script ***********${NC}\n"
 
 if [[ $EUID -ne 0 ]]; then
-    echo -e "${Y}This script must be run as root (e.g. sudo ./ubuntu-gateway-setup.sh)${NC}\n"
+    echo -e "${Y}This script must be run as root (e.g. sudo ./raspi-setup.sh)${NC}\n"
     exit 1
 fi
 
@@ -107,8 +106,8 @@ if [ "$CUR_DIR" != "$GATEWAY_DIR" ]; then
     echo -e "${Y}ERROR!! Check your current working directory!${NC}\n"
     echo -e "${Y}Download your installation script and configuration files from github and then execute this script with following commands:${NC}"
     echo -e "${Y}git clone https://github.com/plangdon/iot-class.git${NC}"
-    echo -e "${Y}cd gateway-setup${NC}"
-    echo -e "${Y}sudo ./ubuntu-gateway-setup.sh${NC}\n"
+    echo -e "${Y}cd installers/raspi-setup${NC}"
+    echo -e "${Y}sudo ./raspi-setup.sh${NC}\n"
     exit 1
 fi
 
@@ -126,7 +125,7 @@ systemctl restart sshd
 install_node
 
 #Configuration required only for our labs running core i7
-if [ "$platform" == "$CORE_PLATFORM" ]; then
+#if [ "$platform" == "$CORE_PLATFORM" ]; then
     echo -e "${Y}Install MongoDB package...${NC}\n"
     apt-get install -y mongodb
 
@@ -140,7 +139,7 @@ if [ "$platform" == "$CORE_PLATFORM" ]; then
     apt-get install -y grafana
 
     #Install and setup docker tool
-    install_docker
+    #install_docker
 
     #Install and configure Helix Device Cloud (HDC) agent
     install_hdc
@@ -148,7 +147,7 @@ if [ "$platform" == "$CORE_PLATFORM" ]; then
     #Install Atom editor modules
     install_atom_modules
 
-fi
+#fi
 
 #Install MRAA UPM and plugins for JS
 install_mraa_upm_plugins
@@ -162,8 +161,8 @@ echo 'export NODE_PATH=/usr/lib/node_modules/' >> ~/.bashrc
 #script exits
 source ~/.bashrc
 
-echo -e "${Y}Add nuc-user to dialout group for access to ttyACM0 device...${NC}\n"
-usermod nuc-user -a -G dialout
+echo -e "${Y}Add pi to dialout group for access to ttyACM0 device...${NC}\n"
+usermod pi -a -G dialout
 
 echo -e "\n${Y}********** End of Script ***********${NC}\n"
 echo -e "${Y}********** Rebooting after installation **********${NC}\n"

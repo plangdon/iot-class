@@ -37,6 +37,6 @@ English all (default settings, just hit enter)
   `nuc-user@ubuntu-nuc:~# sudo apt-get install git curl npm`
   `nuc-user@ubuntu-nuc:~# git clone https://github.com/plangdon/iot-class.git`  
   `nuc-user@ubuntu-nuc:~# cd iot-class`   
-  `nuc-user@ubuntu-nuc:~# cd gateway-setup`  
+  `nuc-user@ubuntu-nuc:~# cd installers/gateway-setup`  
   `nuc-user@ubuntu-nuc:~/gateway-setup# sudo ./ubuntu-gateway-setup.sh`  
 * After script completes your system will reboot
