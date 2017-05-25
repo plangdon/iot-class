@@ -127,26 +127,26 @@ install_node
 
 #Configuration required only for our labs running core i7
 #if [ "$platform" == "$CORE_PLATFORM" ]; then
-    echo -e "${Y}Install MongoDB package...${NC}\n"
-    apt-get install -y mongodb
+    #echo -e "${Y}Install MongoDB package...${NC}\n"
+    #apt-get install -y mongodb
 
     echo -e "${Y}Install mosquitto broker and client modules...${NC}\n"
     apt-get install -y mosquitto mosquitto-clients
 
-    echo -e "${Y}Install InfluxDB database...${NC}\n"
-    apt-get install -y influxdb
+    #echo -e "${Y}Install InfluxDB database...${NC}\n"
+    #apt-get install -y influxdb
 
-    echo -e "${Y}Install grafana module...${NC}\n"
-    apt-get install -y grafana
+    #echo -e "${Y}Install grafana module...${NC}\n"
+    #apt-get install -y grafana
 
     #Install and setup docker tool
     #install_docker
 
     #Install and configure Helix Device Cloud (HDC) agent
-    install_hdc
+    #install_hdc
 
     #Install Atom editor modules
-    install_atom_modules
+    #install_atom_modules
 
 #fi
 
