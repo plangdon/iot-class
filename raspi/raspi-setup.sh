@@ -100,7 +100,7 @@ install_mraa_upm_plugins() {
 echo -e "${Y}********** Start of Script ***********${NC}\n"
 
 if [[ $EUID -ne 0 ]]; then
-    echo -e "${Y}This script must be run as root (e.g. sudo ./ubuntu-gateway-setup.sh)${NC}\n"
+    echo -e "${Y}This script must be run as root (e.g. sudo ./raspi-setup.sh)${NC}\n"
     exit 1
 fi
 
@@ -141,7 +141,7 @@ install_node
     apt-get install -y grafana
 
     #Install and setup docker tool
-    install_docker
+    #install_docker
 
     #Install and configure Helix Device Cloud (HDC) agent
     install_hdc
@@ -163,8 +163,8 @@ echo 'export NODE_PATH=/usr/lib/node_modules/' >> ~/.bashrc
 #script exits
 source ~/.bashrc
 
-echo -e "${Y}Add nuc-user to dialout group for access to ttyACM0 device...${NC}\n"
-usermod nuc-user -a -G dialout
+echo -e "${Y}Add pi to dialout group for access to ttyACM0 device...${NC}\n"
+usermod pi -a -G dialout
 
 echo -e "\n${Y}********** End of Script ***********${NC}\n"
 echo -e "${Y}********** Rebooting after installation **********${NC}\n"
