@@ -9,6 +9,7 @@ exec 2> >(tee -ia ubuntu-gateway-install-log-$timestamp.log >&2)
 Y='\033[1;33m'
 NC='\033[0m'
 
+
 #Get the board details
 #ATOM_PLATFORM="DE3815TYKH"
 #CORE_PLATFORM="NUC5i7RYB"

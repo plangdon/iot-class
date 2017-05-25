@@ -1,8 +1,6 @@
 # Node-Red on Raspberry Pi
 
-
 ## Install Raspberry Pi OS
-
 
 
 ### Once booted:
