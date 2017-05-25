@@ -10,6 +10,6 @@
 * After you log in with your credentials enter following commands to download and run the script:  
   `raspberrypi@pi:~# git clone https://github.com/plangdon/iot-class.git`  
   `raspberrypi@pi:~# cd iot-class`  
-  `raspberrypi@pi:~# cd raspi`
+  `raspberrypi@pi:~# cd raspi`  
   `raspberrypi@pi:~/iot-class# sudo ./raspi-setup.sh`  
 * After script completes your system will reboot
