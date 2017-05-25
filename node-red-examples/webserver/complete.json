@@ -13,7 +13,7 @@
 "type": "http in",
 "z": "b9584458.e73ad8",
 "name": "",
-"url": "/",
+"url": "/name",
 "method": "get",
 "swaggerDoc": "",
 "x": 134.70001220703125,
