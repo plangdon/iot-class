@@ -16,5 +16,7 @@
 - IBM Node-red Labs (https://github.com/jeancarl/node-red-labs)
 
 ### In this projects
-- Simple Webserver - (webserver/README.md)
-- MQTT - (mqtt/README.md)
+- IP Address to LCD - [node-red-examples/ip-to-lcd/README.md](node-red-examples/ip-to-lcd/README.md)
+- Simple Webserver - [node-red-examples/simple-webserver/README.md](node-red-examples/simple-webserver/README.md)
+- MQTT - [node-red-examples/mqtt/README.md](node-red-examples/mqtt/README.md)
+- Websockets - [node-red-examples/websockets/README.md](node-red-examples/websockets/README.md)
